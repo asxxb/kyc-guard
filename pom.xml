@@ -31,7 +31,7 @@
 
         <!-- Framework & Dependency Versions -->
         <spring-boot.version>3.3.5</spring-boot.version>
-        <testcontainers.version>1.19.8</testcontainers.version>
+        <testcontainers.version>1.20.4</testcontainers.version>
         <spotless.version>2.43.0</spotless.version>
         <jacoco.version>0.8.12</jacoco.version>
         <springdoc.version>2.6.0</springdoc.version>
@@ -101,6 +101,12 @@
                     <version>3.2.5</version>
                     <configuration>
                         <argLine>@{argLine} -XX:+EnableDynamicAgentLoading</argLine>
+                        <systemPropertyVariables>
+                            <api.version>1.44</api.version>
+                        </systemPropertyVariables>
+                        <environmentVariables>
+                            <TESTCONTAINERS_RYUK_DISABLED>true</TESTCONTAINERS_RYUK_DISABLED>
+                        </environmentVariables>
                     </configuration>
                 </plugin>
 

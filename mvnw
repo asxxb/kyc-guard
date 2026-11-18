@@ -33,6 +33,7 @@ set -euf
 [ "${MVNW_VERBOSE-}" != debug ] || set -x
 
 # OS specific support.
+export PATH="/opt/homebrew/bin:$PATH"
 native_path() { printf %s\\n "$1"; }
 case "$(uname)" in
 CYGWIN* | MINGW*)
@@ -43,10 +44,19 @@ esac
 
 if [ -z "${JAVA_HOME-}" ] || ! "$JAVA_HOME/bin/java" -version 2>&1 | grep -q 'version "21'; then
   if [ -d "/opt/homebrew/opt/openjdk@21" ]; then
-    JAVA_HOME="/opt/homebrew/opt/openjdk@21"
+    export JAVA_HOME="/opt/homebrew/opt/openjdk@21"
   elif [ -x "/usr/libexec/java_home" ] && /usr/libexec/java_home -v 21 >/dev/null 2>&1; then
-    JAVA_HOME="$(/usr/libexec/java_home -v 21)"
+    export JAVA_HOME="$(/usr/libexec/java_home -v 21)"
   fi
+fi
+if [ -n "${JAVA_HOME-}" ]; then
+  export PATH="$JAVA_HOME/bin:$PATH"
+fi
+
+if [ -z "${DOCKER_HOST-}" ] && [ -S "$HOME/.colima/default/docker.sock" ]; then
+  export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
+  export DOCKER_API_VERSION="1.44"
+  export TESTCONTAINERS_RYUK_DISABLED="true"
 fi
 
 # set JAVACMD and JAVACCMD
