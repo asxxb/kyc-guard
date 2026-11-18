@@ -1,10 +1,15 @@
 # KYC-Guard
 
-[![CI](https://github.com/kycguard/kyc-guard/actions/workflows/ci.yml/badge.svg)](https://github.com/kycguard/kyc-guard/actions/workflows/ci.yml)
+[![CI](https://github.com/asxxb/kyc-guard/actions/workflows/ci.yml/badge.svg)](https://github.com/asxxb/kyc-guard/actions/workflows/ci.yml)
 [![Java 21](https://img.shields.io/badge/Java-21%20LTS-blue.svg)](https://openjdk.org/projects/jdk/21/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.x-brightgreen.svg)](https://spring.io/projects/spring-boot)
+[![Kafka](https://img.shields.io/badge/Apache%20Kafka-3.7-231F20.svg?logo=apachekafka)](https://kafka.apache.org/)
+[![Elasticsearch](https://img.shields.io/badge/Elasticsearch-8.x-005571.svg?logo=elasticsearch)](https://www.elastic.co/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1.svg?logo=postgresql)](https://www.postgresql.org/)
 
-> Real-time customer screening, explainable risk scoring, and AML transaction monitoring platform built with Java 21, Spring Boot 3, Kafka, Elasticsearch, PostgreSQL, and React.
+> **Real-time customer screening, explainable risk scoring, and AML transaction monitoring platform.**
+>
+> **Topics:** `java` • `spring-boot` • `kafka` • `elasticsearch` • `kyc` • `aml` • `postgresql` • `fintech` • `compliance`
 
 ---
 
